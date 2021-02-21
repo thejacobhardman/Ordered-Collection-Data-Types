@@ -7,9 +7,6 @@ class Stack:
     def __init__(self):
         self.items = []
 
-    def isEmpty(self):
-        return self.items == []
-
     def push(self, item):
         self.items.append(item)
 
@@ -19,6 +16,9 @@ class Stack:
     def peek(self):
         return self.items[len(self.items)-1]
 
+    def isEmpty(self):
+        return self.items == []
+
     def size(self):
         return len(self.items)
 
@@ -27,14 +27,14 @@ class Queue:
     def __init__(self):
         self.items = []
 
-    def isEmpty(self):
-        return self.items == []
-
     def enqueue(self, item):
         self.items.insert(0, item)
 
     def dequeue(self):
         return self.items.pop()
+        
+    def isEmpty(self):
+        return self.items == []
 
     def size(self):
         return len(self.items)
@@ -43,9 +43,6 @@ class Queue:
 class Deque:
     def __init__(self):
         self.items = []
-
-    def isEmpty(self):
-        return self.items == []
 
     def addFront(self, item):
         self.items.append(item)
@@ -59,5 +56,26 @@ class Deque:
     def removeRear(self):
         return self.items.pop(0)
 
+    def isEmpty(self):
+        return self.items == []
+
     def size(self):
         return len(self.items)
+
+#Node
+class Node:
+    def __init__(self, initData):
+        self.data = initData
+        self.next = None
+
+    def getData(self):
+        return self.data
+
+    def getNext(self):
+        return self.next
+    
+    def setData(self, newData):
+        self.data = newData
+
+    def setNext(self, newNext):
+        self.next = newNext
